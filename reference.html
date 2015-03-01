@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Lesson Title</title>
+    <title>Software Carpentry: Regular Expressions</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -24,21 +24,76 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1 class="title">Lesson Title</h1>
+          <h1 class="title">Regular Expressions</h1>
           <h2 class="subtitle">Reference</h2>
 <h2 id="topic-title-one"><a href="01-one.html">Topic Title One</a></h2>
-<p>...commands and examples...</p>
+<ul>
+<li>Basic Regular Expressions</li>
+<li>Extended Regular Expressions</li>
+<li>Perl Compatable Regular Expressions</li>
+<li>Bash: grep &amp; sed</li>
+</ul>
 <h2 id="topic-title-two"><a href="02-two.html">Topic Title Two</a></h2>
 <p>...commands and examples...</p>
 <h2 id="glossary">Glossary</h2>
-<dl>
-<dt><span id="key-word-1">key word 1</span></dt>
-<dd>Definition of first term
-</dd>
-<dt><span id="key-word-2">key word 2</span></dt>
-<dd>Definition of second term
-</dd>
-</dl>
+<p>Where &quot;x&quot; means any alphabetic character Where n or m means any numeric character etc.</p>
+<h3 id="metacharacters">Metacharacters</h3>
+<pre><code>^x</code></pre>
+<p>&quot;caret&quot;: Only looks at the beginning of the target string for x</p>
+<pre><code>x$</code></pre>
+<p>&quot;dollar&quot;: Only looks at the end of the target string for x</p>
+<pre><code>x.y</code></pre>
+<p>&quot;period&quot;: Looks for a string with any character in this position, <em>but</em> there must be a character</p>
+<pre><code>x?y</code></pre>
+<p>&quot;question mark&quot;: Looks for a string with any character in this position <em>or</em> no character in this position</p>
+<pre><code>x*</code></pre>
+<p>&quot;asterick&quot;: Looks for a string where the character x appears any number of times <em>or</em> no times</p>
+<pre><code>x+</code></pre>
+<p>&quot;plus&quot;: Looks for a string where the character x appears one or more times</p>
+<pre><code>[abc]</code></pre>
+<p>&quot;square brackets&quot;: Looks for a string that contains any of the characters inside the square brackets (&quot;expression&quot;) any number of times</p>
+<pre><code>[a-c]</code></pre>
+<p>&quot;square brackets&quot;: Looks for a string that contains the first character a or any other character until the second character c based on dictionary ordering <strong>Warning:</strong> Depending on your computer location settings what characters are included can differ!</p>
+<pre><code>[^abc]</code></pre>
+<p>&quot;square brackets&quot;: Looks for a string that does <em>not</em> contain any of the characters abc within the square brackets</p>
+<pre><code>x{n}</code></pre>
+<p>&quot;curly braces&quot;: Looks for a string where the preceding character x appears exactly n times</p>
+<pre><code>x{x,m}</code></pre>
+<p>&quot;curly braces&quot;: Looks for a string where the preceding character x appears at least n but not more than m times (n to m inclusive)</p>
+<pre><code>x{n,}</code></pre>
+<p>&quot;curly braces&quot;: Looks for a string where the preceding character x appears at least n times (great than or equal to n)</p>
+<pre><code>(x)</code></pre>
+<p>&quot;parantheses&quot;: Group parts of a search string together into a subexpression <em>or</em> to make the result of the string inside the parantheses a variable which you can later refer back to <strong>note</strong>: Can be nested infinitely</p>
+<pre><code>x|y</code></pre>
+<p>&quot;pipe&quot;: Looks for a string that matches the first character x and <em>if</em> the first is not matched <em>then</em> will look for a string that matches the second character</p>
+<h3 id="character-and-positional-abbreviations">Character and Positional Abbreviations</h3>
+<p>Note that these are implemented in most languages, but not absolutely all. Search &quot;Perl Compatable Regular Expressions&quot; (PCRE) for more information. There also might be more of these abbreviations in your chosen language.</p>
+<pre><code>\n</code></pre>
+<p>Represents a newline (line break)</p>
+<pre><code>\r</code></pre>
+<p>Represents a carriage return (return or enter)</p>
+<pre><code>\t</code></pre>
+<p>Represents a horizontal tab</p>
+<pre><code>\d</code></pre>
+<p>Represents any character in the range 0 - 9 (zero to nine inclusive)</p>
+<pre><code>\D</code></pre>
+<p>Represents any characters <em>not</em> in the range 0 - 9 (zero to nine inclusive)</p>
+<pre><code>\s</code></pre>
+<p>Represents a whitespace character (space or tab)</p>
+<pre><code>\S</code></pre>
+<p>Represents any character that is <em>not</em> a whitespace character (space or tab)</p>
+<pre><code>\w</code></pre>
+<p>Represents any character in the range 0 - 9, A - Z, a - z (all alphanumeric characters)</p>
+<pre><code>\W</code></pre>
+<p>Represents any character that is <em>not</em> in the range 0 - 9, A - Z, a - z (all alphanumeric characters)</p>
+<pre><code>\bx</code></pre>
+<p>Represents the beginning of a word. Looks for a string where the following character x appears at the beginning of a word</p>
+<pre><code>x\b</code></pre>
+<p>Represents the end of a word. Looks for a string where the preceding character x appears at the end of a word</p>
+<pre><code>\Bx</code></pre>
+<p>Represents any position in a string that is <em>not</em> the beginning or the end. Looks for a string where the following character x does <em>not</em> appear at the beginning of a word</p>
+<pre><code>x\B</code></pre>
+<p>Represents any position in a string that is <em>not</em> the beginning or the end. Looks for a string where the preceding character x does <em>not</em> appear at the end of a word</p>
         </div>
       </div>
       <div class="footer">
