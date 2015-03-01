@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson Title
+title: Regular Expressions
 subtitle: Topic Title Two
 minutes: 10
 ---

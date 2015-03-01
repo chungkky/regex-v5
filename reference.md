@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson Title
+title: Regular Expressions
 subtitle: Reference
 ---
 ## [Topic Title One](01-one.html)
@@ -13,8 +13,8 @@ subtitle: Reference
 
 ## Glossary
 
-key word 1
+^
 :   Definition of first term
 
-key word 2
+$
 :   Definition of second term
