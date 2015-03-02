@@ -25,34 +25,37 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Regular Expressions</h1>
-          <h2 class="subtitle">Topic Title One</h2>
+          <h2 class="subtitle">Introduction</h2>
 <div id="learning-objectives" class="objectives">
 <h2>Learning Objectives</h2>
 <ul>
-<li>Learning objective 1</li>
-<li>Learning objective 2</li>
+<li>Learn what regular expressions are and related terminology</li>
+<li>Get comfortable reading regular expressions</li>
+<li>Start building simple search strings</li>
 </ul>
 </div>
-<p>Paragraphs of text --- possibly including <a href="reference.html#key-word-1">key word 1</a> --- mixed with:</p>
-<pre class="sourceCode python"><code class="sourceCode python">some code:
-    to be displayed</code></pre>
-<pre class="output"><code>output
-from
-program</code></pre>
-<pre class="error"><code>error reports from program (if any)</code></pre>
-<p>and possibly including:</p>
-<div id="callout-box" class="callout">
-<h2>Callout Box</h2>
-<p>An aside of some kind.</p>
-</div>
-<p>or an image from the <code>figs</code> directory:</p>
-<div class="figure">
-<img src="fig/example.svg" title="this is the image&#39;s alt text" alt="this is the image&#39;s title" />
-<p class="caption">this is the image's title</p>
-</div>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>Often shortened to regex or regexp (pronounced the way it looks)</li>
+<li>Regular expressions are written like algebra for words, using symbols in addition to &quot;literal&quot; characters</li>
+<li>Can look for letters, numbers, and characters, including whitespace</li>
+<li>Can set up logical operations like &quot;if the first character in a word is a number, look to see if the last character in the word is a number&quot;</li>
+<li>Used in web design for simple search engines and checking that inputs are formatted correctly</li>
+<li>Used in programming to find specific parts of a file to modify or use in a program</li>
+</ul>
+<h2 id="definitions">Definitions</h2>
+<ul>
+<li>A &quot;string&quot; is a set of characters, any characters</li>
+<li>The thing we're looking for, whether it's a phrase or word or set of numbers, is called the &quot;target string&quot;</li>
+<li>The thing you're searching, usually text files, is called the &quot;source&quot;</li>
+<li>And the regular expression we write is the &quot;search string&quot;</li>
+<li>A regex search string is correct if it finds <strong>all</strong> of the examples of the target string in the source</li>
+<li>A regex search string is incorrect if it only finds some of the target strings or none of them or finds the wrong string</li>
+<li>A program uses the search string as definition to find the target string and do something to or with it</li>
+</ul>
 <div id="challenge-title" class="challenge">
 <h2>Challenge Title</h2>
-<p>Description of a single challenge. There may be several challenges.</p>
+<p>Play around with the regex tester thing using your mouse to highlight the coloured areas of the search string and reading the definitions of the parts, try changing things</p>
 </div>
         </div>
       </div>
