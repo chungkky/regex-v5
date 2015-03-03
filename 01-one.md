@@ -2,7 +2,7 @@
 layout: page
 title: Regular Expressions
 subtitle: Introduction
-minutes: 5-10
+minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -29,5 +29,5 @@ minutes: 5-10
 
 
 > ## Challenge Title {.challenge}
->
-> Play around with the regex tester thing using your mouse to highlight the coloured areas of the search string and reading the definitions of the parts, try changing things
+>[RegExr](http://regexr.com/)
+> Play around with the regex tester thing using your mouse to highlight the coloured areas of the search string and reading the definitions of the parts, try changing things.

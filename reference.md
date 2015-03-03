@@ -12,7 +12,10 @@ subtitle: Reference
 
 ## [Topic Title Two](02-two.html)
 
-...commands and examples...
+~~~
+x.*
+~~~
+x followed by any character any number of times.
 
 ## Glossary
 
