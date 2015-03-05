@@ -30,4 +30,4 @@ minutes: 5
 
 > ## Challenge Title {.challenge}
 >[RegExr](http://regexr.com/)
-> Play around with the regex tester thing using your mouse to highlight the coloured areas of the search string and reading the definitions of the parts, try changing things.
+> Play around with the regex tester thing using your mouse to highlight the coloured areas of the search string and reading the definitions of the parts, seeing what in the search string matches what in the results.

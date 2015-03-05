@@ -1,10 +1,24 @@
-Kross E, Verduyn P, Demiralp E, Park J, Lee DS, et al. (2013). Facebook Use Predicts Declines in Subjective Well-Being in Young Adults. PLoS ONE 8(8): e69841. DOI:10.1371/journal.pone.0069841
+Dixon, L., Fernandez, P. & Williamson, J. (2014). Factors in Science Journal Cancellation Projects: The Roles of Faculty Consultations and Data. Issues in Science and Technology Librarianship. DOI:10.5062/F4G73BP3
+
+Bussmann, J.D. & Plovnick, C.E. (2013). Review, Revise, and (re)Release: Updating an Information Literacy Tutorial to Embed a Science Information Life Cycle.  Issues in Science and Technology Librarianship. DOI:10.5062/F4F769JQ
+
+Garcia D, Archer T. (2014) Positive affect and age as predictors of exercise compliance. PeerJ 2:e694 http://dx.doi.org/10.7717/peerj.694 
+
+Kross E, Verduyn P, Demiralp E, Park J, Lee DS, et al. (2013). Facebook Use Predicts Declines in Subjective Well-Being in Young Adults. PLoS ONE 8(8): e69841. doi:10.1371/journal.pone.0069841
 
 Allsop DJ, Copeland J, Norberg MM, Fu S, Molnar A, et al. (2012) Quantifying the Clinical Significance of Cannabis Withdrawal. PLoS ONE 7(9): e44864. doi:10.1371/journal.pone.0044864
 
-Lenoir M, Serre F, Cantin L, Ahmed SH (2007) Intense Sweetness Surpasses Cocaine Reward. PLoS ONE 2(8): e698. DOI:10.1371/journal.pone.0000698
+Lenoir M, Serre F, Cantin L, Ahmed SH (2007) Intense Sweetness Surpasses Cocaine Reward. PLoS ONE 2(8): e698. doi:10.1371/journal.pone.0000698
 
-Krebs TS, Johansen P-Ø (2013) Psychedelics and Mental Health: A Population Study. PLoS ONE 8(8): e63972. 10.1371/journal.pone.0063972
+Krebs TS, Johansen P-Ø (2013) Psychedelics and Mental Health: A Population Study. PLoS ONE 8(8): e63972. doi:10.1371/journal.pone.0063972
+
+Tomonaga M, Kaneko T. (2014) What did you choose just now? Chimpanzees’ short-term retention of memories of their own behavior. PeerJ 2:e637 http://dx.doi.org/10.7717/peerj.637 
+
+Håstad O, Ödeen A. (2014) A vision physiological estimation of ultraviolet window marking visibility to birds. PeerJ 2:e621 http://dx.doi.org/10.7717/peerj.621 
+
+Wilson WJ, Ferrara NC, Blaker AL, Giddings CE. (2014) Escape and avoidance learning in the earthworm Eisenia hortensis. PeerJ 2:e250 http://dx.doi.org/10.7717/peerj.250
+
+Sliwinski M, Sigmon E. (2013) Why do leaf-tying caterpillars abandon their leaf ties? PeerJ 1:e173 http://dx.doi.org/10.7717/peerj.173
 
 Holmes EA, James EL, Coode-Bate T, Deeprose C (2009) Can Playing the Computer Game “Tetris” Reduce the Build-Up of Flashbacks for Trauma? A Proposal from Cognitive Science. PLoS ONE 4(1): e4153. Source: 10.1371/journal.pone.0004153
 
@@ -16,7 +30,13 @@ Smith AD, Smith SM, de Jager CA, Whitbread P, Johnston C, et al. (2010) Homocyst
 
 Owen AD, Hayward RD, Koenig HG, Steffens DC, Payne ME (2011) Religious Factors and Hippocampal Atrophy in Late Life. PLoS ONE 6(3): e17006. doi:10.1371/journal.pone.0017006
 
+Schoolmaster DR Jr. (2013) Resource competition and coexistence in heterogeneous metacommunities: many-species coexistence is unlikely to be facilitated by spatial variation in resources. PeerJ 1:e136 http://dx.doi.org/10.7717/peerj.136
+
+Ocampo-Peñuela N, Pimm SL. (2015) Bird conservation would complement landslide prevention in the Central Andes of Colombia. PeerJ 3:e779 http://dx.doi.org/10.7717/peerj.779
+
 Dhejne C, Lichtenstein P, Boman M, Johansson ALV, Långström N, et al. (2011) Long-Term Follow-Up of Transsexual Persons Undergoing Sex Reassignment Surgery: Cohort Study in Sweden. PLoS ONE 6(2): e16885. doi:10.1371/journal.pone.0016885
 
 Fluge Ø, Bruland O, Risa K, Storstein A, Kristoffersen EK, et al. (2011) Benefit from B-Lymphocyte Depletion Using the Anti-CD20 Antibody Rituximab in Chronic Fatigue Syndrome. A Double-Blind and Placebo-Controlled Study. PLoS ONE 6(10): e26358. doi:10.1371/journal.pone.0026358
+
+Jensen, Jannaya. 2014. "'The Master Problem of the Age': Print Culture and the Sex Trade in Canada, 1880-1920". Dalhousie Journal of Interdisiciplinary Management 10 (1). 10.5931/djim.v10i1.3362
 
