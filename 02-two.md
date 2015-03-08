@@ -66,7 +66,45 @@ Try putting an asterisk after the period.
 /Peer.*/g
 ~~~
 
-What do you find?  All the text after the word Peer is selected.
+What do you find?  All the text after the word Peer is selected.  Why?  Because the period-asterisk combo can be translated to "a character any number of times".  
 
 > ## Challenge {.challenge}
 >So since we know the name of the journal is usually in the middle of a citation and not at the beginning or end, how would you modify this search string to highlight the whole citation?
+
+Metacharacters _usually_ are influenced by the character immediately in front of them, so this
+
+~~~
+/Peer*./g
+~~~
+
+Is not the same as the previous search string.  The asterisk is now acting on the "r", saying "the character r can appear any number of times, then some letter comes after".  Just like how there are the rules of operation in algebra (BEDMAS/PEDMAS), the order in which you write the search string matters.  And just like with algebra, you'll just have to remember them, and there's no great mnemotic to help you out.
+
+You may remember that the period signals that there _must_ be a character in that position, but what if you aren't sure there is?  Somehow, sensibly, the metacharacter you use here is a question mark.
+
+And if a character appears one or more times it's a plus sign.
+
+## find all citations from before 2010: 
+reversing/making a NOT statement
+
+## find all citations with the last name author 
+you know their last name, but not their first, or initial, or even how it's written
+whitespace metacharacter
+\w and \W
+
+I do need to warn periodically that the use of metacharacters can vary slightly depending on the language you're using.  Especially teh "shortcut" metacharacters like \w.  This is OK because \w is just equal to a-z 0-9.
+
+but there could be comma whitespace, just whitespace, etc
+and we want to get the whole citation
+~~~
+(Dixon\W*\w).*
+~~~
+
+If we knew that the first author's last name is always at the beginning of the citation we can use caret
+
+If we know the DOI is always the last string in the citation we can use dollarsign
+
+## Some DOIs have slashes in them
+
+Escaping characters :(
+Most of the time, the reason why long regular expressions look terrifying is because of having to escape characters
+
