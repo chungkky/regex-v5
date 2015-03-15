@@ -10,101 +10,58 @@ minutes: 10
 > * Get comfortable reading regular expressions
 > * Start building simple search strings
 
-The file citations.txt is in the data/ directory.  You can copy and paste the content of that file into the "text" area of the Regexr.  These citations are just a selection of open access papers that have DOIs (digital object identifier) which act like semi-permanent URLs and are written in a few different citation styles.  
 
-The default search string in the "Expression" bar is:
+Please type or copy and paste the following into the top text area where it says "Write your regex here":
 ~~~
-/([A-Z])\w+/g
+[A-Z]\w+
 ~~~
 
+The file citations.txt is in the data/ directory.  Please copy and paste the content of that file into the bottom text area of Regexpal.  These citations are just a selection of open access papers written in a few different citation styles.  
 
 > ## Challenge Title {.challenge}
 >
-> Would anyone like to try to explain what this search expression is finding in the text?
+> Would anyone like to try to guess what this search expression is finding in the text?
 
-
-Let's take it apart and just delete everything between the forward slashes except for the following:
-~~~
-//g
-~~~
-
->__Note:__ Despite the common confusion the forward slash leans to the right and the backslash leans to the left.  We'll be using both.  Forwardslash is usually in the bottom row of keys next to Shift and backslash is usually up around Backspace on Anglo keyboards.
-
-The reason why you can't delete the two slashes is because they signal the beginning and the end of the search string.  Depending on what programming language you use this might be different, but one thing that tends to be consistent is the presence of flags.  We will get into the most common flags later.
-
-I would now like to find all the articles that were published in PeerJ.  This is something most search functions can handle, but let's replicate it with the regular expressions the search engine is using. 
+Let's start at the beginning.  A search string with just the following:
 
 ~~~
-/PeerJ/g
+[A-Z]
 ~~~
 
-As you can see, if you type in your search string, it is taken literally.  This is true for all alphanumeric characters.  
+Selects all capital letters.  It has analogous search strings in [a-z]  all lowercase letters and [0-9] all numbers.  Try replacing the A-Z with the previous two to see what gets selected.
 
-However, if you want to find a search string that contains a special character like an asterisk __*__ you need to be more careful because symbols have special meaning in regular expression-land.
-
-Computers are super literal.  If you change your search string to 
-~~~
-/Peerj/g
-~~~
-
-You won't get any results.  Capital letters and lowercase letters are different characters after all.
-
-## Metacharacters
-One of handyest metacharacters is the period.  A period indicates that there should be a character in the place where the period is, but it doesn't matter what character it is.
+The second part of the search phrase goes like this:
 
 ~~~
-/Peer./g
+[A-Z]\w
 ~~~
 
-If you were to change one of the "PeerJ"s in the text area to "PeerK" or even "Peerj" it would still be picked up by this search string.
-
-But right now we're literally just picking up the word we're searching for.  What we really want is all of the citations that are published in PeerJ, not just the word PeerJ.  This is where the asterisk comes in.
-
-Try putting an asterisk after the period.
+The backslash and the w go together to make up what is called a "metacharacter".  It's a character that represents a character.  Metacharacters effectively make your search strings shorter by representing common search strings.  In this case, \w replaces the following:
 
 ~~~
-/Peer.*/g
+([A-Z]|[a-z]|[0-9])
 ~~~
 
-What do you find?  All the text after the word Peer is selected.  Why?  Because the period-asterisk combo can be translated to "a character any number of times".  
+Which stands for "all capital letters OR all lowercase letters OR all numbers".  The vertical bars or lines or pipes indicate the "or".  The brackets are not strictly necessary, but if you try replacing the \w with the above string without the brackets the search string does not work the way you expect it to.  Like in math, you need to group certain parts of a function together to make sure the function is read correctly.  
+
+Fortunately, we can use the \w metacharacter to avoid all this messiness.  
+
+> NOTE: If you're having difficulty, you might be using the forward slash "/" instead of the backslash "\".  All metacharacters use the backslash, which is commonly found around the delete/backspace button on most keyboards.  
+
+So let's get back to our original function:
+
+~~~
+[A-Z]\w+
+~~~
+
+The last plus sign is also a metacharacter.  It manipulates the previous metacharacter by saying to find whatever appears before it one or more times.  In this case, the search string is now looking for any string where \w, which is any alphanumeric character, appears any number of times.
+
+If we were to read this search string out in normal language it would sound like it is searching for "A capital letter followed by one or more of any alphanumeric character".  In even simpler language, this search string finds every word that starts with a capital letter.  
+
+If you look at what the search string found, you can tell that multiple capital letters like "DJ" are picked up, but just one letter standing alone like "L" does not get picked up.  If you really do want to find all words that start with capital letters, you probably don't want to get the author's initials.  This is all a part of how you build and refine search strings by looking at how you can identify aspects of what you're looking for that are distinctive and specific.
 
 > ## Challenge {.challenge}
->So since we know the name of the journal is usually in the middle of a citation and not at the beginning or end, how would you modify this search string to highlight the whole citation?
+> 
+> What is something you think would be a way to exclude initials from our search string?
 
-Metacharacters _usually_ are influenced by the character immediately in front of them, so this
-
-~~~
-/Peer*./g
-~~~
-
-Is not the same as the previous search string.  The asterisk is now acting on the "r", saying "the character r can appear any number of times, then some letter comes after".  Just like how there are the rules of operation in algebra (BEDMAS/PEDMAS), the order in which you write the search string matters.  And just like with algebra, you'll just have to remember them, and there's no great mnemotic to help you out.
-
-You may remember that the period signals that there _must_ be a character in that position, but what if you aren't sure there is?  Somehow, sensibly, the metacharacter you use here is a question mark.
-
-And if a character appears one or more times it's a plus sign.
-
-## find all citations from before 2010: 
-reversing/making a NOT statement
-
-## find all citations with the last name author 
-you know their last name, but not their first, or initial, or even how it's written
-whitespace metacharacter
-\w and \W
-
-I do need to warn periodically that the use of metacharacters can vary slightly depending on the language you're using.  Especially teh "shortcut" metacharacters like \w.  This is OK because \w is just equal to a-z 0-9.
-
-but there could be comma whitespace, just whitespace, etc
-and we want to get the whole citation
-~~~
-(Dixon\W*\w).*
-~~~
-
-If we knew that the first author's last name is always at the beginning of the citation we can use caret
-
-If we know the DOI is always the last string in the citation we can use dollarsign
-
-## Some DOIs have slashes in them
-
-Escaping characters :(
-Most of the time, the reason why long regular expressions look terrifying is because of having to escape characters
-
+So far we've seen how to pick out simple things like letters and numbers, how metacharacters can make that simpler, and how to read a search string.  There are a lot of other metacharacters to talk about, so in the next lesson we'll switch to a more realistic example.
