@@ -5,56 +5,69 @@ subtitle: More complex expressions
 minutes: 10
 ---
 
-I would now like to find all the articles that were published in PeerJ.  This is something most word processor search functions can handle, but let's replicate it with the regular expressions the search engine is using. 
+Last lesson we were just finding something generic, but we might as well try some more complicated strings related to citations.  We're going to look at some more common metacharacters and building them up.
+
+Let's imagine I would now like to find all the articles that were published in PeerJ.  This is something most word processor search functions can handle, but the secret of all simple search engines is that they're using regular expressions behind the scenes. 
+
+Type or copy the following string into the search text area:
 
 ~~~
-/PeerJ/g
+PeerJ
 ~~~
 
-As you can see, if you type in your search string, it is taken literally.  This is true for all alphanumeric characters.  
+As you can see, if you type in your search string, it is taken literally in regular expressions.  This is true for all alphanumeric characters.  
 
 However, if you want to find a search string that contains a special character like an asterisk __*__ you need to be more careful because symbols have special meaning in regular expression-land.
 
 Computers are super literal.  If you change your search string to 
 ~~~
-/Peerj/g
+Peerj
 ~~~
 
-You won't get any results.  Capital letters and lowercase letters are different characters after all.
+You won't get any results.  Capital letters and lowercase letters are different characters after all.  That is why using more general regular expressions with metacharacters like in the previous section might seem more complicated, but allows for a search that makes more intuitive sense.
+
+> Note: Later we are going to discuss flags, which are modifications to the default behaviour of regex, and one of those is making an expression case insensitive.
 
 ## Metacharacters
-One of handyest metacharacters is the period.  A period indicates that there should be a character in the place where the period is, but it doesn't matter what character it is.
+One of handyest metacharacters is the period.  A period indicates that there should be a character in the place where the period is, but it doesn't matter what character it is.  
 
 ~~~
-/Peer./g
+Peer.
 ~~~
 
-If you were to change one of the "PeerJ"s in the text area to "PeerK" or even "Peerj" it would still be picked up by this search string.
+If you were to change one of the "PeerJ"s in the text area to "PeerK" or even "Peerj" it would still be picked up by this search string.  This would __not__, however, pick up just "Peer" because the period says there must be an alphanumeric character there.  If there might be no character you can use a question mark instead.
 
-But right now we're literally just picking up the word we're searching for.  What we really want is all of the citations that are published in PeerJ, not just the word PeerJ.  This is where the asterisk comes in.
+~~~
+Peer?
+~~~
+
+Right now we're literally just picking up the word we're searching for.  What we really want is all of the citations that are published in PeerJ, not just the word PeerJ.  This is where the asterisk comes in.
 
 Try putting an asterisk after the period.
 
 ~~~
-/Peer.*/g
+Peer.*
 ~~~
 
-What do you find?  All the text after the word Peer is selected.  Why?  Because the period-asterisk combo can be translated to "a character any number of times".  
+What do you find?  All the text after the word Peer is selected.  Why?  Because the period-asterisk combo can be translated to "an alphanumeric character any number of times".  
 
 > ## Challenge {.challenge}
 >So since we know the name of the journal is usually in the middle of a citation and not at the beginning or end, how would you modify this search string to highlight the whole citation?
 
-Metacharacters _usually_ are influenced by the character immediately in front of them, so this
+Metacharacters _usually_ are influenced by the character immediately in front of them, as we saw with the "\w+" in the previous section. So this search string:
 
 ~~~
-/Peer*./g
+Peer*.
 ~~~
 
-Is not the same as the previous search string.  The asterisk is now acting on the "r", saying "the character r can appear any number of times, then some letter comes after".  Just like how there are the rules of operation in algebra (BEDMAS/PEDMAS), the order in which you write the search string matters.  And just like with algebra, you'll just have to remember them, and there's no great mnemotic to help you out.
+Is not the same as the previous search string.  The asterisk is now acting on the "r", saying "the character r can appear any number of times, then some letter comes after".  Just like how there are the rules of operation in algebra (BEDMAS/PEDMAS), the order in which you write the search string matters.  
 
-You may remember that the period signals that there _must_ be a character in that position, but what if you aren't sure there is?  Somehow, sensibly, the metacharacter you use here is a question mark.
+So now we have in our search arsenal 
 
-And if a character appears one or more times it's a plus sign.
+~~~
+( ) [A-Z] [a-z] [0-9] | . * ? + \w
+~~~
+
 
 ## find all citations from before 2010: 
 reversing/making a NOT statement
